@@ -1,0 +1,54 @@
+<!Doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <div th:replace="navbar_main :: head"></div>
+        <title>Data Collection App | Add User</title>
+        <link th:href="@{/css/style_add_update_User.css}" rel="stylesheet">
+    </head>
+    <body onload="removeAddBtn()">
+        <div th:replace="navbar_main :: header"></div>
+        <div class="row no-gutters">
+            <div class="col">
+                <h1 id="heading">Add User</h1>
+            </div>
+        </div>
+        <form id="form" method="post" th:object="${newUserData}" th:action="@{/addUser}">
+            <div class="row no-gutters">
+                <div class="col">
+                    <label for="userName">Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" th:field="${newUserData.userName}" id="userName" name="userName" required /><br><br>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col">
+                    <label for="age">Age:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="number" th:field="${newUserData.age}" id="age" name="age" required /><br><br>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col">
+                    <label for="email">Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="email" th:field="${newUserData.email}" id="email" name="email" required /><br><br>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col">
+                    <label for="mobileNumber">Mobile No:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="number" th:field="${newUserData.mobileNumber}" id="mobileNumber" name="mobileNumber" required/><br><br>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col">
+                    <label for="address">Address:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" th:field="${newUserData.address}" id="address" name="address" /><br/><br/><br>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col">
+                    <input id="sub" type="submit" value="Submit Data" />
+                </div>
+            </div>
+        </form>
+        <footer th:replace="navbar_main :: foot"></footer>
+    </body>
+</html>

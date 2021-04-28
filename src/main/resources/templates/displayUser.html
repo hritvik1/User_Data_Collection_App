@@ -1,0 +1,32 @@
+<!Doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+    <head>
+        <div th:replace="navbar_main :: head"></div>
+        <title>Data Collection App | User Details</title>
+        <link th:href="@{/css/style_displayUser.css}" rel="stylesheet">
+    </head>
+    <body onload="removeShowBtn()">
+        <div th:replace="navbar_main :: header"></div>
+        <h1 id="heading">User(s) Info</h1>
+        <main class="grid">
+            <images th:each="userData : ${usersData}">
+                <article>
+                    <div class="text">
+                        <h3 id="imgName" th:text="${userData.userName}"></h3>
+                        <p id="desc" class="info" th:text="${userData.age}"></p>
+                        <p class="info"><u>Tags</u>: <span th:text="${userData.email}"></span></p>
+                        <p id="postDate" class="info"><u>Posted On</u>:&nbsp;&nbsp;<span th:text="${userData.address}"></span></p>
+                        <p><u>Updated On</u>:&nbsp;&nbsp;<span th:text="${userData.mobileNumber}"></span></p>
+                    </div>
+                    <div id="buttons">
+                        <a th:href="@{/updateUser(userId=${userData.id})}"><button id="btn1">Update Pic</button></a>
+                        <form  th:action="@{/deleteUser(userId=${userData.id})}" th:method="delete">
+                            <button type="submit" id="btn2">Delete user</button>
+                        </form>
+                    </div>
+                </article>
+            </images>
+        </main>
+        <footer th:replace="navbar_main :: foot"></footer>
+    </body>
+</html>
