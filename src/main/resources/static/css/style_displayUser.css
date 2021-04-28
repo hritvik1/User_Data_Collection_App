@@ -1,15 +1,19 @@
+#mainIcon {
+    margin-top: 25px;
+    font-size: 35px;
+    color: #00aeff;
+}
 #heading {
     text-align: center;
-    font-size: 30px;
-    text-decoration: underline;
+    font-size: 40px;
     font-family: 'Kalam', cursive;
     color: #fd9e02;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    grid-gap: 22px;
     align-items: center;
     margin: 20px;
 }
@@ -18,60 +22,46 @@
     box-shadow: 2px 2px 8px 5px  rgba(0,0,0,0.3);
     border-radius: 15px;
 }
-.grid article img {
-    max-width: 100%;
-    border-radius: 13px;
-}
-.grid article .text {
-    padding: 0 0 0 20px;
-    font-family: 'Kalam', cursive;
+.grid article .textArea {
+    padding: 10px 0 0 20px;
     font-size: 20px;
 }
-.grid article .text #imgName {
-    color: #8c0048;
+.grid article .textArea #table_main {
+    margin-left: auto;
+    margin-right: auto;
 }
-.grid article .text .info {
-    margin-top: -12px;
-    font-size: 18px;
-}
-.grid article .text #desc {
-    word-break: break-all;
-    margin-right: 3px;
-}
-.grid article .text #postDate {
-    margin-top: 4px;
-}
-.grid article .text #updatedPostDate {
-    margin-top: -19px;
+.grid article .textArea .data {
+    padding-left: 15px;
 }
 .grid article #buttons {
+    margin-top: 15px;
     text-align: center;
 }
 .grid article #buttons button {
-    background-color: #8c8c8c;
+    background-color: #187fd0;
     border: 0;
     color: white;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 12px;
-    margin-right: 8px;
+    margin-right: 10px;
     display: inline-block;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 2px solid red;
     font-weight: bold;
 }
-.grid article #buttons #btn1, .grid article #buttons #btn2 {
-    width: 20%;
+.grid article #buttons #updateBtn {
+    width: 40%;
+}
+.grid article #buttons #deleteBtn {
+    width: 30%;
 }
 .grid article #buttons form {
     display: inline;
-}
-.grid article #buttons #btn3 {
-    width: 31%;
 }
 .grid article #buttons button:focus {
     outline: none;
 }
 .grid article #buttons button:hover {
     cursor: pointer;
-    background-color: #6b6b6b;
+    background-color: #0e568d;
 }

@@ -1,9 +1,14 @@
 body {
     text-align: center;
 }
+#mainIcon {
+    margin-top: 50px;
+    font-size: 35px;
+    color: #00aeff;
+}
 #heading {
-    margin-top: 70px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 23px;
     font-size: 60px;
     font-family: 'Kalam', cursive;
 }
@@ -23,12 +28,12 @@ input {
 input:focus {
     outline: none;
 }
-#form #sub {
-    margin-top: 25px;
+#sub {
+    margin-top: 10px;
     font-weight: bold;
     width: auto;
 }
-#form #sub:hover {
+#sub:hover {
     color: #2361d4;
     cursor: pointer;
 }

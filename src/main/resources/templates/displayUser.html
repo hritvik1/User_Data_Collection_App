@@ -7,25 +7,53 @@
     </head>
     <body onload="removeShowBtn()">
         <div th:replace="navbar_main :: header"></div>
-        <h1 id="heading">User(s) Info</h1>
+        <div class="row no-gutters">
+            <div class="col text-center">
+                <i id="mainIcon" class="fas fa-users"></i>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col text-center">
+                <h1 id="heading">User(s) Info</h1>
+            </div>
+        </div>
         <main class="grid">
-            <images th:each="userData : ${usersData}">
+            <div th:each="userData : ${usersData}">
                 <article>
-                    <div class="text">
-                        <h3 id="imgName" th:text="${userData.userName}"></h3>
-                        <p id="desc" class="info" th:text="${userData.age}"></p>
-                        <p class="info"><u>Tags</u>: <span th:text="${userData.email}"></span></p>
-                        <p id="postDate" class="info"><u>Posted On</u>:&nbsp;&nbsp;<span th:text="${userData.address}"></span></p>
-                        <p><u>Updated On</u>:&nbsp;&nbsp;<span th:text="${userData.mobileNumber}"></span></p>
+                    <div class="textArea text-center">
+                        <table id="table_main" class="text-center">
+                            <tr>
+                                <td><u>Name</u>:</td>
+                                <td class="data"><span th:text="${userData.userName}"></span></td>
+                            </tr>
+                            <tr>
+                                <td><u>Age</u>:</td>
+                                <td class="data"><span th:text="${userData.age}"></span></td>
+                            </tr>
+                            <tr>
+                                <td><u>Email</u>:</td>
+                                <td class="data"><span th:text="${userData.email}"></span></td>
+                            </tr>
+                            <tr>
+                                <td><u>Address</u>:</td>
+                                <td class="data"><span th:text="${userData.address}"></span></td>
+                            </tr>
+                            <tr>
+                                <td><u>Mobile No</u>:</td>
+                                <td class="data"><span th:text="${userData.mobileNumber}"></span></td>
+                            </tr>
+                        </table>
                     </div>
-                    <div id="buttons">
-                        <a th:href="@{/updateUser(userId=${userData.id})}"><button id="btn1">Update Pic</button></a>
-                        <form  th:action="@{/deleteUser(userId=${userData.id})}" th:method="delete">
-                            <button type="submit" id="btn2">Delete user</button>
-                        </form>
+                    <div class="row" id="buttons">
+                        <div class="col">
+                            <a th:href="@{/updateUser(userId=${userData.id})}"><button id="updateBtn"><i class="fas fa-user-edit"></i>&nbsp;Update User Data</button></a>
+                            <form  th:action="@{/deleteUser(userId=${userData.id})}" th:method="delete">
+                                <button type="submit" id="deleteBtn"><i class="fas fa-user-times"></i>&nbsp;Delete User</button>
+                            </form>
+                        </div>
                     </div>
                 </article>
-            </images>
+            </div>
         </main>
         <footer th:replace="navbar_main :: foot"></footer>
     </body>
