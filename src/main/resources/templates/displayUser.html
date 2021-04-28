@@ -47,7 +47,7 @@
                     <div class="row" id="buttons">
                         <div class="col">
                             <a th:href="@{/updateUser(userId=${userData.id})}"><button id="updateBtn"><i class="fas fa-user-edit"></i>&nbsp;Update User Data</button></a>
-                            <form  th:action="@{/deleteUser(userId=${userData.id})}" th:method="delete">
+                            <form onsubmit="return confirmDelete()" th:action="@{/deleteUser(userId=${userData.id})}" th:method="delete">
                                 <button type="submit" id="deleteBtn"><i class="fas fa-user-times"></i>&nbsp;Delete User</button>
                             </form>
                         </div>
