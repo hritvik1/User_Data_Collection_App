@@ -17,8 +17,14 @@
                 <h1 id="heading">User(s) Info</h1>
             </div>
         </div>
+        <div th:if="${usersData.isEmpty()}" class="row no-gutters">
+            <div class="col text-center">
+                <div id="no_data">No Data Found!!</div>
+            </div>
+        </div>
         <main class="grid">
             <div th:each="userData : ${usersData}">
+
                 <article>
                     <div class="textArea text-center">
                         <table id="table_main" class="text-center">

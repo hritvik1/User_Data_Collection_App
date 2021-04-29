@@ -10,6 +10,12 @@
     color: #fd9e02;
     margin-top: 10px;
 }
+#no_data {
+    font-size: 40px;
+    margin-top: 12%;
+    color: red;
+    font-weight: bold;
+}
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
