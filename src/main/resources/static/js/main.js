@@ -53,11 +53,10 @@ function validate() {
     return false;
   }
   if(address.length > 20){
-    text = "Address should be less then 30 characters in length";
+    text = "Address should be less then 20 characters in length";
     error_message.innerHTML = err_symbol + text;
     return false;
   }
-  error_message.innerHTML = '';
   return true;
 }
 
