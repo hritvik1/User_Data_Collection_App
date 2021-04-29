@@ -17,35 +17,40 @@
                 <h1 id="heading">Update User</h1>
             </div>
         </div>
-        <form id="updateUserForm" th:method="put" th:object="${oldData}" th:action="@{/updateUser(userId=${oldData.id})}">
+        <form id="updateUserForm" onsubmit="return validate()" onkeyup="return removeErrMsg()" th:method="put" th:object="${oldData}" th:action="@{/updateUser(userId=${oldData.id})}">
             <div class="row no-gutters">
                 <div class="col">
-                    <label for="userName">Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" th:value="${oldData.userName}" id="userName" name="userName" required /><br><br>
+                    <label for="userName">Name:<span class="star">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" th:value="${oldData.userName}" id="userName" name="userName" /><br><br>
                 </div>
             </div>
             <div class="row no-gutters">
                 <div class="col">
-                    <label for="age">Age:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="number" th:value="${oldData.age}" id="age" name="age" required /><br><br>
+                    <label for="age">Age:<span class="star">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="number" th:value="${oldData.age}" id="age" name="age" /><br><br>
                 </div>
             </div>
             <div class="row no-gutters">
                 <div class="col">
-                    <label for="email">Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="email" th:value="${oldData.email}" id="email" name="email" required /><br><br>
+                    <label for="email">Email:<span class="star">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" th:value="${oldData.email}" id="email" name="email" /><br><br>
                 </div>
             </div>
             <div class="row no-gutters">
                 <div class="col">
-                    <label for="mobileNumber">Mobile No:</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="number" th:value="${oldData.mobileNumber}" id="mobileNumber" name="mobileNumber" required/><br><br>
+                    <label for="mobileNumber">Mobile No:<span class="star">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="number" th:value="${oldData.mobileNumber}" id="mobileNumber" name="mobileNumber" /><br><br>
                 </div>
             </div>
             <div class="row no-gutters">
                 <div class="col">
                     <label for="address">Address:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="text" th:value="${oldData.address}" id="address" name="address" /><br/><br/><br>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col">
+                    <div id="error_message"></div>
                 </div>
             </div>
             <div class="row no-gutters">
